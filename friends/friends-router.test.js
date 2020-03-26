@@ -2,7 +2,7 @@ const request = require("supertest");
 const server = require("../api/server");
 const Friends = require("./friends-model");
 
-describe("Testing server.js endpoints", () => {
+describe("\n * Testing server.js endpoints", () => {
   // TEST IF POST WORKS
 
   describe("\n * Post /", () => {
@@ -45,7 +45,9 @@ describe("Testing server.js endpoints", () => {
           expect(res.status).not.toBe(200);
         });
     });
+
     // TRY ASYNC AND AWAIT FOR TESTING
+
     it("It responds with a message of friend deleted", async () => {
       const newFriend = await request(server)
         .post("/api/friends")
