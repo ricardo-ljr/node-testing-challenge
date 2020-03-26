@@ -39,7 +39,7 @@ router.delete("/:id", (req, res) => {
   Friends.remove(id)
     .then(deleted => {
       if (deleted) {
-        res.json({
+        res.status(200).json({
           message: "Sorry you lost a friend, aka removed him successfully"
         });
       } else {
